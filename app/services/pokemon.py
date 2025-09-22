@@ -21,7 +21,7 @@ class PokeService:
 
         return pokemon
 
-    def get(self, page, page_size):
+    def get(self, page: int, page_size: int):
         pokemons = self.__repository.get(page, page_size)
         pokemons = json.loads(dumps(pokemons))
         return pokemons
@@ -34,7 +34,7 @@ class PokeService:
 
         return created_pokemon
 
-    def update(self, pokemon_id, pokemon: Pokemon):
+    def update(self, pokemon_id: int, pokemon: Pokemon):
         updated_pokemon = self.__repository.update(pokemon_id, pokemon)
         if not updated_pokemon:
             raise HTTPException(status_code=404,
@@ -42,7 +42,7 @@ class PokeService:
 
         return updated_pokemon
 
-    def delete(self, pokemon_id):
+    def delete(self, pokemon_id: int):
         deleted_pokemon = self.__repository.delete(pokemon_id)
         if not deleted_pokemon:
             raise HTTPException(status_code=404,

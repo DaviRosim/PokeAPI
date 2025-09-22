@@ -14,7 +14,7 @@ class PokeRepository:
     def get_by_id(self, pokemon_id: int):
         return self.collection.find_one({"id": pokemon_id}, {"_id": 0})
 
-    def get(self, page=1, page_size=50):
+    def get(self, page: int = 1, page_size: int = 50):
         skip = (page - 1) * page_size
         return list(self.collection
                     .find({}, {"_id": 0})
