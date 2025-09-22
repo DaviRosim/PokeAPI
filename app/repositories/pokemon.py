@@ -1,8 +1,8 @@
 from pymongo.database import Database
 from pymongo.collection import Collection
 
-from config import get_mongo_database, get_mongo_collection
-from models import Pokemon
+from app.config import get_mongo_database, get_mongo_collection
+from app.models import Pokemon
 
 
 class PokeRepository:

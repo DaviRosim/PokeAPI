@@ -1,1 +1,1 @@
-from services.pokemon import PokeService
+from app.services.pokemon import PokeService

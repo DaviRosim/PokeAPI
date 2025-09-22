@@ -2,8 +2,8 @@ import json
 from fastapi import HTTPException
 from bson.json_util import dumps
 
-from repositories import PokeRepository
-from models import Pokemon
+from app.repositories import PokeRepository
+from app.models import Pokemon
 
 
 class PokeService:

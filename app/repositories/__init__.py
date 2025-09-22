@@ -1,1 +1,1 @@
-from repositories.pokemon import PokeRepository
+from app.repositories.pokemon import PokeRepository
