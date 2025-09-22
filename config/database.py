@@ -1,16 +1,22 @@
 from pymongo import MongoClient
 from pymongo.database import Database
+from pymongo.collection import Collection
 
-from settings import get_settings
+from config import get_settings
 
 
 def get_mongo_client() -> MongoClient:
-    mongo_client = MongoClient(get_settings().MONGO_URI)
-    return mongo_client
+    return MongoClient(get_settings().MONGO_URI)
 
 
 def get_mongo_database() -> Database:
-    return get_mongo_client()[get_settings().MONGO_DATABASE]
+    return get_mongo_client().get_database(get_settings().MONGO_DATABASE)
+
+
+def get_mongo_collection() -> Collection:
+    return (get_mongo_client()
+            .get_database(get_settings().MONGO_DATABASE)
+            .get_collection(get_settings().MONGO_COLLECTION))
 
 
 def close_connection() -> None:
