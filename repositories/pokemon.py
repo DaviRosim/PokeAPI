@@ -17,7 +17,7 @@ class PokeRepository:
     def get(self, page=1, page_size=50):
         skip = (page - 1) * page_size
         return list(self.collection
-                    .find()
+                    .find({}, {"_id": 0})
                     .skip(skip)
                     .limit(page_size))
 
