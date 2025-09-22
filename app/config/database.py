@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from pymongo.database import Database
 from pymongo.collection import Collection
 
-from app.config import get_settings
+from app.config.settings import get_settings
 
 
 def get_mongo_client() -> MongoClient:

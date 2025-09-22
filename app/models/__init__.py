@@ -1,1 +1,0 @@
-from app.models.pokemon import Pokemon

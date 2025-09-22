@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from app.services import PokeService
-from app.models import Pokemon
+from app.services.pokemon import PokeService
+from app.models.pokemon import Pokemon
 
 
 router = APIRouter(

@@ -1,1 +1,0 @@
-from app.routes.pokemon import router
