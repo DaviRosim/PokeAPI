@@ -3,6 +3,7 @@ from pymongo.collection import Collection
 
 from app.config.database import get_mongo_database, get_mongo_collection
 from app.models.pokemon import Pokemon
+from dataset.pokedex import dataset
 
 
 class PokeRepository:
@@ -10,6 +11,11 @@ class PokeRepository:
     def __init__(self):
         self.db: Database = get_mongo_database()
         self.collection: Collection = get_mongo_collection()
+
+    def reset(self):
+        self.db.drop_collection(self.collection)
+        self.collection.insert_many(dataset)
+        print("BD resetado!")
 
     def get_by_id(self, pokemon_id: int):
         return self.collection.find_one({"id": pokemon_id}, {"_id": 0})

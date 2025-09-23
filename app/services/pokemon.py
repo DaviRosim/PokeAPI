@@ -11,6 +11,9 @@ class PokeService:
     def __init__(self):
         self.__repository: PokeRepository = PokeRepository()
 
+    def reset(self):
+        self.__repository.reset()
+
     def get_by_id(self, pokemon_id: int):
         pokemon = self.__repository.get_by_id(pokemon_id)
         pokemon = json.loads(dumps(pokemon))

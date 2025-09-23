@@ -10,6 +10,7 @@ router = APIRouter(
 )
 
 poke_service = PokeService()
+poke_service.reset()
 
 
 @router.get("/")
