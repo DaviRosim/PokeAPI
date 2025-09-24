@@ -22,9 +22,9 @@ A aplicação foi construída utilizando **FastAPI** para criação de endpoints
    git clone https://github.com/DaviRosim/PokeAPI.git
    cd PokeAPI
    ```
-2. Suba os containers
+2. Rodar a aplicação:
    ```bash
-   docker-compose up
+   make run
    ```
 3. Acesse a aplicação:
    - API: http://localhost:8000
